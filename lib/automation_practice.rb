@@ -3,4 +3,7 @@ require_relative 'pages/checkout'
 
 
 class AutomationPracticeSite
+  def checkout
+    Checkout.new
+  end
 end
