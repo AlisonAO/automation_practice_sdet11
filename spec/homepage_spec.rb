@@ -34,6 +34,18 @@ describe 'homepage' do
   end
 
   it 'checks that the text entered matches what is expected' do
+    @auto_site.homepage.fill_in('search_query', :with => 'red')
+    expect(@auto_site.homepage.find_field('search_query').value).to eq('red')
+  end
+
+  it 'checks the search button works and url contains correct query' do
+    @auto_site.homepage.find(:xpath, '//*[@id="searchbox"]/button').click
+    expect(@auto_site).to have_content('red')
+    # sleep 3
+#
+#     session.fill_in('q', :with => 'Capybara')
+# session.click_button('Search')
+# expect(session).to have_content('Capybara')
 
   end
 
