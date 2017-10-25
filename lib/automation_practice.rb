@@ -1,4 +1,9 @@
-#  require relative's will go here for each page
+require_relative 'pages/myaccountpage'
 
 class AutomationPracticeSite
+
+  def myaccountpage
+    MyAccountPage.new
+  end
+
 end
