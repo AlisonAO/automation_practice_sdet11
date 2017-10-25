@@ -30,7 +30,11 @@ describe 'homepage' do
   end
 
   it 'checks the search submit button present' do
-    @auto_site.homepage.find(:xpath, '//*[@id="searchbox"]/button')
+    @auto_site.homepage.find(:xpath, '//*[@id="searchbox"]/button').visible?
+  end
+
+  it 'checks that the text entered matches what is expected' do
+
   end
 
 
