@@ -6,4 +6,8 @@ class AutomationPracticeSite
     MyAccountPage.new
   end
 
+  def addressespage
+    AddressesPage.new
+  end
+
 end
