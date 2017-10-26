@@ -13,6 +13,8 @@ class Contact
   MESSAGE_CONFIRMATION = '//*[@id="center_column"]/p'
   SUBMIT_MESSAGE = '#submitMessage'
   DROP_OPTION = '//*[@id="id_contact"]/option[1]'
+  ERROR_MESSAGE = '//*[@id="center_column"]/div'
+  HOME_BUTTON = '//*[@id="center_column"]/ul/li/a/span'
 
   def visit_contact_page
     visit(CONTACT_URL)
@@ -35,7 +37,7 @@ class Contact
   end
 
   def choose_subject
-    choose_subject_header.click(DROP_OPTION)
+    choose_subject_header.select('Webmaster')
   end
 
 
@@ -86,6 +88,22 @@ class Contact
 
   def send_message
     submit_button.click
+  end
+
+  def confirmation
+    find(:xpath, MESSAGE_CONFIRMATION)
+  end
+
+  def error_message
+    find(:xpath, ERROR_MESSAGE)
+  end
+
+  def home
+    find(:xpath, HOME_BUTTON)
+  end
+
+  def go_home
+    home.click
   end
 
 
