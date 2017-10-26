@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require 'capybara/dsl'
 
 class CreateAccount
@@ -219,3 +220,6 @@ class CreateAccount
   end
 
 end
+=======
+
+>>>>>>> dev
