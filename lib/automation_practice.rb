@@ -5,6 +5,7 @@ require_relative 'pages/sign_in/login'
 require_relative 'pages/myaccountpage'
 require_relative 'pages/mywishlistpage'
 require_relative 'pages/cart'
+require_relative 'pages/productpage'
 
 class AutomationPracticeSite
 
@@ -22,6 +23,10 @@ class AutomationPracticeSite
 
     def mywishlistpage
       MyWishListPage.new
+    end
+
+    def productpage
+      ProductPage.new
     end
 
 end

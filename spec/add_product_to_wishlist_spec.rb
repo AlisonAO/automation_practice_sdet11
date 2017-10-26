@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'delete wishlist' do
+describe 'add to wishlist' do
 
   before(:all) do
     @site = AutomationPracticeSite.new
@@ -13,12 +13,12 @@ describe 'delete wishlist' do
     @site.login.click_sign_in_submit_button
   end
 
-  it 'should go to my wishlist' do
-    @site.myaccountpage.click_wishlist_button
+  it 'should go to product page' do
+    @site.productpage.visit_product_page
   end
 
-  it 'should delete the wishlist' do
-    @site.mywishlistpage.delete_wishlist
+  it 'should add a product to the wishlist'
+    @site.productpage.click_sign_in_link
   end
 
 end
