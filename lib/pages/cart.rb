@@ -58,11 +58,11 @@ class Cart
 
   #Finding and clicking on continue shopping button
     def continue_shopping_button
-      find(:xpath, CONTINUE_SHOPPING).visible?
+      find(:xpath, CONTINUE_SHOPPING)
     end
 
     def click_continue_shopping_button
-      continue_shopping_button.click
+      continue_shopping_button.click()
     end
 
   #Finding and clicking on proceed to checkout button
@@ -71,7 +71,7 @@ class Cart
     end
 
     def click_proceed_to_checkout_button
-      proceed_to_checkout_button.click
+      proceed_to_checkout_button.click()
     end
 
 end
