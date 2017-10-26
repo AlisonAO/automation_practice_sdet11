@@ -24,17 +24,16 @@ class AutomationPracticeSite
       MyAccountPage.new
     end
 
-<<<<<<< HEAD
     def mywishlistpage
       MyWishListPage.new
     end
 
     def productpage
       ProductPage.new
-=======
+    end
+
     def addressespage
       AddressesPage.new
->>>>>>> dev
     end
 
 end

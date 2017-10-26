@@ -17,8 +17,10 @@ describe 'add to wishlist' do
     @site.productpage.visit_product_page
   end
 
-  it 'should add a product to the wishlist'
-    @site.productpage.click_sign_in_link
+  it 'should add a product to the wishlist' do
+    @site.productpage.click_add_to_wishlist_button
+    @site.productpage.close_added_to_list_alert
+    sleep 10
   end
 
 end

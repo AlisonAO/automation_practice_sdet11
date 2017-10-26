@@ -7,6 +7,7 @@ class ProductPage
   PRODUCT_PAGE_URL = 'http://automationpractice.com/index.php?id_product=1&controller=product'
   WISHLIST_PAGE_LINK = 'http://automationpractice.com/index.php?id_product=1&controller=product'
   WISHLIST_BUTTON_ID = '#wishlist_button'
+  ADDED_TO_LIST_X_CLASS = '.fancybox-close'
 
   # Helper methods
   def visit_product_page
@@ -19,6 +20,14 @@ class ProductPage
 
   def click_add_to_wishlist_button
     wishlist_button.click
+  end
+
+  def added_to_list_alert
+    find(ADDED_TO_LIST_X_CLASS)
+  end
+
+  def close_added_to_list_alert
+    added_to_list_alert.click
   end
 
 end
