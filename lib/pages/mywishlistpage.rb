@@ -32,7 +32,7 @@ class MyWishListPage
   end
 
   def my_wishlist(listname)
-    find('a', text: listname)
+    find('a', text: => listname)
   end
 
   def click_my_wishlist(listname)

@@ -6,7 +6,7 @@ class MyAccountPage
   ACCOUNT_PAGE_LINK = 'http://automationpractice.com/index.php?controller=my-account'
 
   def my_wishlist_button
-    find(:title, 'My wishlists')
+    find('a', :text => 'My wishlists')
   end
 
   def click_wishlist_button
