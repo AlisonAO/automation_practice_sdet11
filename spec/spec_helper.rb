@@ -1,5 +1,9 @@
 require 'capybara'
+<<<<<<< HEAD
 require_relative'../lib/automation_practice'
+=======
+require_relative '../lib/automation_practice'
+>>>>>>> dev
 
 RSpec.configure do |config|
   config.formatter = :documentation
