@@ -1,15 +1,20 @@
 require 'capybara/dsl'
 
-CONTACT_URL = "http://automationpractice.com/index.php?controller=contact"
-SUBJECT_HEADER = '#id_contact'
-EMAIL_FORM = '#email'
-ORDER_REFERENCE = '#id_order'
-FILE_ATTACH = '#fileUpload'
-MESSAGE_FIELD = '#message'
-
 
 class Contact
   include Capybara::DSL
+
+  CONTACT_URL = "http://automationpractice.com/index.php?controller=contact"
+  SUBJECT_HEADER = '#id_contact'
+  EMAIL_FORM = '#email'
+  ORDER_REFERENCE = '#id_order'
+  FILE_ATTACH = '#fileUpload'
+  MESSAGE_FIELD = '#message'
+  MESSAGE_CONFIRMATION = '//*[@id="center_column"]/p'
+
+  def visit_contact_page
+    visit(CONTACT_URL)
+  end
 
   def contact_url
     find(CONTACT_URL)
@@ -27,6 +32,10 @@ class Contact
     find(EMAIL_FORM)
   end
 
+  def email_write
+    email_form.send_keys('sparta@123.com')
+  end
+
   def click_email_form
     email_form.click
   end
@@ -37,6 +46,10 @@ class Contact
 
   def click_order_reference
     order_reference_no.click
+  end
+
+  def order_reference_write
+    order_reference_no.send_keys('adshdo')
   end
 
   def file_upload
@@ -52,7 +65,9 @@ class Contact
   end
 
   def message_write
-    select_message.fill_in('hello!')
+    select_message.send_keys('hello!')
   end
+
+
 
 end
