@@ -56,5 +56,5 @@ class AddressesPage
   def click_home_page_link
     home_page_link.click
   end
-  
+
 end

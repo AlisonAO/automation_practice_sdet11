@@ -1,4 +1,5 @@
 require_relative 'pages/myaccountpage'
+require_relative 'pages/addressespage'
 
 class AutomationPracticeSite
 
