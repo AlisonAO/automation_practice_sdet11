@@ -7,8 +7,7 @@ class Checkout
   CHECKOUT_ADDRESS_URL = 'http://automationpractice.com/index.php?controller=order&step=1'
   CHECKOUT_PAYMENT_URL = 'http://automationpractice.com/index.php?controller=order&multi-shipping='
   CHECKOUT_PROCEED_BUTTON = '//*[@id="center_column"]/p[2]/a[1]'
-  NO_ITEMS_CHECKOUT_ALERT = '.alert-warning'
-
+  DELETE_ITEM_BUTTON = '#3_13_0_0'
 
   def visit_checkout
     visit(CHECKOUT_URL)
@@ -18,8 +17,8 @@ class Checkout
     find(CHECKOUT_PROCEED_BUTTON)
   end
 
-  def no_items_alert
-    find(NO_ITEMS_CHECKOUT_ALERT)
+  def delete_button
+    find(DELETE_ITEM_BUTTON)
   end
 
 end

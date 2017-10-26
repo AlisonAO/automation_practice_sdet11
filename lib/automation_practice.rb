@@ -1,7 +1,7 @@
 require_relative 'pages/sign_in/create_account'
 require_relative 'pages/sign_in/forgotten_password'
 require_relative 'pages/sign_in/login'
-require_relative 'pages/checkout'
+require_relative 'pages/checkout/checkout'
 
 class AutomationPracticeSite
 
@@ -13,7 +13,7 @@ class AutomationPracticeSite
         Login.new
     end
 
-    def checkout
+    def zcheckout
       Checkout.new
     end
 end
