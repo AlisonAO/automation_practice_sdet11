@@ -16,24 +16,63 @@ class Cart
   HOME_PAGE_URL = 'http://automationpractice.com/index.php'
   HOME_PAGE_ADD_TO_CART = '//*[@id="homefeatured"]/li[5]/div/div[2]/div[2]/a[1]'
 
-  #Product Page
-
   #Helper Methods
-  def load_page
-    visit(ITEM_PAGE_URL)
-  end
+  #Loading relevant pages where user can add item to cart
+    def load_item_page
+      visit(ITEM_PAGE_URL)
+    end
 
-  def click_add_to_cart_button
-    find(ADD_TO_CART_ID).click
-  end
+    def load_category_page
+      visit(CATEGORY_PAGE_URL)
+    end
 
-  def click_continue_shopping_button
-    find(:xpath, CONTINUE_SHOPPING).click
-  end
+    def load_homepage
+      visit(HOME_PAGE_URL)
+    end
 
-  def click_proceed_to_checkout_button
-    find(:xpath, PROCEED_TO_CHECKOUT).click
-  end
+  #Finding the add to cart button on the 3 pages
+    def add_to_cart_button_item_page
+      find(ADD_TO_CART_ID)
+    end
+
+    def add_to_cart_button_category_page
+      find(CATEGORY_PAGE_ADD_TO_CART)
+    end
+
+    def add_to_cart_button_homepage
+      find(HOME_PAGE_ADD_TO_CART)
+    end
+
+  #Clicking on the add to cart buttons
+    def click_item_page
+      add_to_cart_button_item_page.click
+    end
+
+    def click_category_page
+      add_to_cart_button_category_page.click
+    end
+
+    def click_home_page
+      add_to_cart_button_homepage.click
+    end
+
+  #Finding and clicking on continue shopping button
+    def continue_shopping_button
+      find(:xpath, CONTINUE_SHOPPING)
+    end
+
+    def click_continue_shopping_button
+      continue_shopping_button.click
+    end
+
+  #Finding and clicking on proceed to checkout button
+    def proceed_to_checkout_button
+      find(:xpath, PROCEED_TO_CHECKOUT)
+    end
+
+    def click_proceed_to_checkout_button
+      proceed_to_checkout_button.click
+    end
 
 end
 
