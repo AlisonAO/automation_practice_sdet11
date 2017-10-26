@@ -4,6 +4,7 @@ class NavBar
 
     include Capybara::DSL
 
+    HOMEPAGE_URL = 'http://automationpractice.com/index.php'
     WOMEN_PAGE_URL = 'http://automationpractice.com/index.php?id_category=3&controller=category'
     TOPS_PAGE_URL = 'http://automationpractice.com/index.php?id_category=4&controller=category'
     TSHIRTS_PAGE_URL = 'http://automationpractice.com/index.php?id_category=5&controller=category'
@@ -12,6 +13,11 @@ class NavBar
     CASUAL_DRESSES_PAGE_URL = 'http://automationpractice.com/index.php?id_category=9&controller=category'
     EVENING_DRESSES_PAGE_URL = 'http://automationpractice.com/index.php?id_category=10&controller=category'
     SUMMER_DRESSES_PAGE_URL = 'http://automationpractice.com/index.php?id_category=11&controller=category'
+
+    def start
+      visit(HOMEPAGE_URL)
+      sleep 2
+    end
 
     def visit_women
       visit(WOMEN_PAGE_URL)
