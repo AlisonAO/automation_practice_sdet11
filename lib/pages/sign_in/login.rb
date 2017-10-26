@@ -32,7 +32,11 @@ class Login
         create_submit_button.click
     end
 
-    def sing_in_user_field
+
+
+
+
+    def sign_in_user_field
         find(USEREMAIL_FIELD_ID)
     end
 
@@ -40,7 +44,7 @@ class Login
         sign_in_user_field.send_keys(email)
     end
 
-    def sing_in_password_field
+    def sign_in_password
         find(PASSWORD_FIELD_ID)
     end
 
@@ -55,6 +59,11 @@ class Login
     def click_sign_in_submit_button
         sign_in_submit_button.click
     end
+
+
+
+
+
 
     def forgot_password
         find(FORGOT_PASSWORD_LINK)
