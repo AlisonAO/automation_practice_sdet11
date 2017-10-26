@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'capybara/dsl'
 
 class CreateAccount
