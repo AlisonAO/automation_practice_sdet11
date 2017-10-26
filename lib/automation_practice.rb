@@ -15,7 +15,7 @@ class AutomationPracticeSite
         Login.new
     end
 
-    def zcheckout
+    def checkout
       Checkout.new
     end
 end

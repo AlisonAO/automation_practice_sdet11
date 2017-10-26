@@ -7,18 +7,32 @@ class Checkout
   CHECKOUT_ADDRESS_URL = 'http://automationpractice.com/index.php?controller=order&step=1'
   CHECKOUT_PAYMENT_URL = 'http://automationpractice.com/index.php?controller=order&multi-shipping='
   CHECKOUT_PROCEED_BUTTON = '//*[@id="center_column"]/p[2]/a[1]'
+  CHECKOUT_BUTTON_TWO = '//*[@id="center_column"]/form/p/button'
   DELETE_ITEM_BUTTON = '#3_13_0_0'
+  ADD_CHECKOUT_COMMENT = '//*[@id="ordermsg"]/textarea'
 
   def visit_checkout
     visit(CHECKOUT_URL)
   end
 
   def checkout_button
-    find(CHECKOUT_PROCEED_BUTTON)
+    find(:xpath, CHECKOUT_PROCEED_BUTTON)
   end
 
   def delete_button
     find(DELETE_ITEM_BUTTON)
+  end
+
+  def checkout_field
+    find(:xpath, ADD_CHECKOUT_COMMENT)
+  end
+
+  def input_checkout_field(comment)
+    checkout_field.send_keys(comment)
+  end
+
+  def checkout_button_two
+    find(:xpath, CHECKOUT_BUTTON_TWO)
   end
 
 end

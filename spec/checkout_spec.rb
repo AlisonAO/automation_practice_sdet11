@@ -5,6 +5,7 @@ describe 'checkout page test' do
   before(:all) do
     @checkout = AutomationPracticeSite.new
     @automation = AutomationPracticeSite.new
+    @cart = Cart.new
   end
 
   it "should sign in" do
@@ -16,7 +17,7 @@ describe 'checkout page test' do
   end
 
   it 'should identify we are on the right page' do
-    @checkout.zcheckout.visit_checkout
+    @checkout.checkout.visit_checkout
     sleep 3
   end
 
@@ -27,7 +28,18 @@ describe 'checkout page test' do
   # end
 
   it 'should click the checkout button and proceed to next step' do
-    @checkout.zcheckout.checkout_button.click
+    @checkout.checkout.checkout_button.click
     sleep 3
   end
+
+  it 'should add a message in the order comments' do
+    @checkout.checkout.input_checkout_field('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+    sleep 3
+  end
+
+  it 'should click the checkout button again and proceed to next step' do
+    @checkout.checkout.checkout_button_two.click
+    sleep 3
+  end
+
 end
