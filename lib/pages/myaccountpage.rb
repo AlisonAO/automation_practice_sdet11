@@ -8,7 +8,7 @@ class MyAccountPage
   MY_ADDRESSES_LINK = '//*[@id="center_column"]/div/div[1]/ul/li[3]/a'
   MY_PERSONAL_INFORMATION_LINK = '//*[@id="center_column"]/div/div[1]/ul/li[4]/a'
 
-  
+
 
 
 end
