@@ -87,7 +87,7 @@ class CreateAccount
   end
 
   def choose_months(months)
-    click_month_dropdown.select(months)
+    click_months_dropdown.select(months)
   end
 
   def year_dropdown
@@ -163,15 +163,19 @@ class CreateAccount
   end
 
   def input_city(city)
-    city_field(city)
+    city_field.send_keys(city)
   end
 
   def state_dropdown
       find(STATE_DROPDOWN_ID)
   end
 
+  def click_state_dropdown
+    state_dropdown.click
+  end
+
   def choose_state(state)
-    state_dropdown.find(state).select_option
+    click_state_dropdown.select(state)
   end
 
   def postcode_field
@@ -186,8 +190,12 @@ class CreateAccount
     find(COUNTRY_DROPDOWN_ID)
   end
 
+  def click_country_dropdown
+    country_dropdown.click
+  end
+
   def choose_country(country)
-    country_dropdown.find(country).select_option
+    click_country_dropdown.select(country)
   end
 
   def additional_info_field
@@ -219,7 +227,7 @@ class CreateAccount
   end
 
   def input_address_alias(additonal)
-    address_alias_field.send_keys(additional)
+    address_alias_field.send_keys(additonal)
   end
 
   def register_button
