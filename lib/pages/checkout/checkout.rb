@@ -10,6 +10,9 @@ class Checkout
   CHECKOUT_BUTTON_TWO = '//*[@id="center_column"]/form/p/button'
   DELETE_ITEM_BUTTON = '#3_13_0_0'
   ADD_CHECKOUT_COMMENT = '//*[@id="ordermsg"]/textarea'
+  TOS_CHECKBOX = '#cgv'
+  CHECKOUT_BUTTON_THREE = '//*[@id="form"]/p/button'
+  PAYMENT_METHOD_BUTTON = '//*[@id="HOOK_PAYMENT"]/div[1]/div'
 
   def visit_checkout
     visit(CHECKOUT_URL)
@@ -35,4 +38,15 @@ class Checkout
     find(:xpath, CHECKOUT_BUTTON_TWO)
   end
 
+  def tos_checkbox
+    find(TOS_CHECKBOX)
+  end
+
+  def checkout_button_three
+    find(:xpath, CHECKOUT_BUTTON_THREE)
+  end
+
+  def payment_method_1
+    find(:xpath, PAYMENT_METHOD_BUTTON)
+  end
 end

@@ -42,4 +42,15 @@ describe 'checkout page test' do
     sleep 3
   end
 
+  it 'should click the terms of service checkbox' do
+    @checkout.checkout.tos_checkbox.click
+    @checkout.checkout.checkout_button_three.click
+    sleep 3
+  end
+
+  it 'should click a payment method' do
+    @checkout.checkout.payment_method_1.click
+    sleep 3
+  end
+
 end
