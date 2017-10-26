@@ -11,6 +11,8 @@ class Contact
   FILE_ATTACH = '#fileUpload'
   MESSAGE_FIELD = '#message'
   MESSAGE_CONFIRMATION = '//*[@id="center_column"]/p'
+  SUBMIT_MESSAGE = '#submitMessage'
+  DROP_OPTION = '//*[@id="id_contact"]/option[1]'
 
   def visit_contact_page
     visit(CONTACT_URL)
@@ -27,6 +29,16 @@ class Contact
   def click_subject_header
     subject_header.click
   end
+
+  def choose_subject_header
+    click_subject_header
+  end
+
+  def choose_subject
+    choose_subject_header.click(DROP_OPTION)
+  end
+
+
 
   def email_form
     find(EMAIL_FORM)
@@ -66,6 +78,14 @@ class Contact
 
   def message_write
     select_message.send_keys('hello!')
+  end
+
+  def submit_button
+    find(SUBMIT_MESSAGE)
+  end
+
+  def send_message
+    submit_button.click
   end
 
 
