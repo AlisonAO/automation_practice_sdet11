@@ -20,12 +20,17 @@ describe 'Automation Practice' do
   end
 
   it 'should click the link called back to your account' do
-    @automation_practice_site.myaccountpage.click_back_to_your_account_link
+    @automation_practice_site.addressespage.click_back_to_your_account_link
     sleep 3
   end
 
   it 'should click the link called my addresses' do
     @automation_practice_site.myaccountpage.click_my_addresses_link
+    sleep 3
+  end
+
+  it 'should click the link called add a new address' do
+    @automation_practice_site.addressespage.click_add_a_new_address_button
     sleep 3
   end
 

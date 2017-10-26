@@ -4,6 +4,7 @@ require_relative 'pages/sign_in/forgotten_password'
 require_relative 'pages/sign_in/login'
 require_relative 'pages/myaccountpage'
 require_relative 'pages/addressespage'
+require_relative 'addnewaddresspage'
 require_relative 'pages/cart'
 
 class AutomationPracticeSite
@@ -22,6 +23,10 @@ class AutomationPracticeSite
 
     def addressespage
       AddressesPage.new
+    end
+
+    def addnewaddresspage
+      AddNewAddressPage.new
     end
 
 end
