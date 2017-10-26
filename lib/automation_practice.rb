@@ -6,6 +6,9 @@ require_relative 'pages/myaccountpage'
 require_relative 'pages/mywishlistpage'
 require_relative 'pages/cart'
 require_relative 'pages/productpage'
+require_relative 'pages/addressespage'
+require_relative 'pages/cart'
+require_relative 'pages/navbar'
 
 class AutomationPracticeSite
 
@@ -21,12 +24,17 @@ class AutomationPracticeSite
       MyAccountPage.new
     end
 
+<<<<<<< HEAD
     def mywishlistpage
       MyWishListPage.new
     end
 
     def productpage
       ProductPage.new
+=======
+    def addressespage
+      AddressesPage.new
+>>>>>>> dev
     end
 
 end
