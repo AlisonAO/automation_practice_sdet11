@@ -4,6 +4,9 @@ require_relative 'pages/sign_in/forgotten_password'
 require_relative 'pages/sign_in/login'
 require_relative 'pages/navbar'
 require_relative 'pages/myaccountpage'
+require_relative 'pages/mywishlistpage'
+require_relative 'pages/cart'
+require_relative 'pages/productpage'
 require_relative 'pages/addressespage'
 require_relative 'pages/checkout/checkout'
 require_relative 'pages/cart'
@@ -24,6 +27,14 @@ class AutomationPracticeSite
 
     def myaccountpage
       MyAccountPage.new
+    end
+
+    def mywishlistpage
+      MyWishListPage.new
+    end
+
+    def productpage
+      ProductPage.new
     end
 
     def addressespage
