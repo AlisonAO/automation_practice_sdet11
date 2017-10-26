@@ -1,4 +1,5 @@
 require 'capybara'
+require_relative '../lib/automation_practice'
 
 RSpec.configure do |config|
   config.formatter = :documentation
