@@ -58,7 +58,7 @@ class Cart
 
   #Finding and clicking on continue shopping button
     def continue_shopping_button
-      find(:xpath, CONTINUE_SHOPPING)
+      find(:xpath, CONTINUE_SHOPPING).visible?
     end
 
     def click_continue_shopping_button
@@ -75,5 +75,3 @@ class Cart
     end
 
 end
-
-cart = Cart.new
