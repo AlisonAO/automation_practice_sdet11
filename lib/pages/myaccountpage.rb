@@ -4,9 +4,10 @@ class MyAccountPage
   include Capybara::DSL
 
   ACCOUNT_PAGE_LINK = 'http://automationpractice.com/index.php?controller=my-account'
+  MY_WISHLIST_BUTTON_TEXT = 'My wishlists'
 
   def my_wishlist_button
-    find('a', :text => 'My wishlists')
+    find('a', :text => MY_WISHLIST_BUTTON_TEXT)
   end
 
   def click_wishlist_button

@@ -8,7 +8,7 @@ class MyWishListPage
   WISHLIST_FORM_ID = '#form_wishlist'
   WISHLIST_NAME_FIELD_ID = '#name'
   WISHLIST_SUBMIT_BUTTON_ID = '#submitWishlist'
-  # WISHLIST_DELETE_CLASS = '.wishlist_delete'
+  WISHLIST_DELETE_CLASS = '.wishlist_delete'
 
   # Helper methods
   def visit_wishlist_page
@@ -32,15 +32,21 @@ class MyWishListPage
   end
 
   def my_wishlist(listname)
-    find('a', text: => listname)
+    find('a', text: listname)
   end
 
   def click_my_wishlist(listname)
     my_wishlist(listname).click
   end
 
-  # def delete_wishlist_icon
-  #   find(WISHLIST_DELETE_CLASS)
-  # end
+  def find_delete_wishlist_icon
+    icons = page.all('td.wishlist_delete a.icon')
+    icons[0]
+  end
+
+  def delete_wishlist
+    find_delete_wishlist_icon.click
+    page.driver.browser.switch_to.alert.accept
+  end
 
 end
