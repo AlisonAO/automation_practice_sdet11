@@ -6,7 +6,7 @@ class MyAccountPage
 #Page objects below
   MY_ACCOUNT_PAGE_URL = 'http://automationpractice.com/index.php?controller=my-account'
   MY_ADDRESSES_LINK_XPATH = '//*[@id="center_column"]/div/div[1]/ul/li[3]/a'
-  MY_ADDRESSES_LINK_TEXT = ''
+  MY_ADDRESSES_LINK_TEXT = 'My addresses'
   MY_PERSONAL_INFORMATION_LINK_XPATH = '//*[@id="center_column"]/div/div[1]/ul/li[4]/a'
 
 
@@ -16,7 +16,7 @@ class MyAccountPage
   end
 
   def my_addresses_link
-    find(MY_ADDRESSES_LINK_XPATH)
+    find('a', :text => MY_ADDRESSES_LINK_TEXT)
   end
 
   def click_my_addresses_link
