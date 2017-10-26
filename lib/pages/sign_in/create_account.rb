@@ -220,6 +220,3 @@ class CreateAccount
   end
 
 end
-=======
-
->>>>>>> dev
