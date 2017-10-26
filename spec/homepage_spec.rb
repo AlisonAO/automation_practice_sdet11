@@ -24,6 +24,14 @@ describe 'homepage' do
     @auto_site.homepage.site_logo.visible?
   end
 
+  it 'should have cart image and menu on the page' do
+    @auto_site.homepage.cart
+  end
+
+  it 'should have a product list' do
+    @auto_site.homepage.products
+  end
+
   # SEARCH BAR TESTS
   context 'The page should have a functioning search bar' do
     it 'should have a search text field' do
@@ -41,9 +49,6 @@ describe 'homepage' do
 
     it 'has a url containing the correct query, post-click' do
       @auto_site.homepage.find(:xpath, '//*[@id="searchbox"]/button').click
-      sleep 2
-      # expect(@auto_site.has_current_path?).to have_content('red')
-      # sleep 3
     end
   end
 
@@ -53,18 +58,21 @@ describe 'homepage' do
   end
 
   it 'should have %off image links' do
-    # @auto_site.homepage.visit_home_page
     @auto_site.homepage.percentage_button2
     @auto_site.homepage.percentage_button3
   end
 
   it 'should have 5 working trend images' do
-    # @auto_site.homepage.visit_home_page
     @auto_site.homepage.bot_img_1
     @auto_site.homepage.bot_img_2
     @auto_site.homepage.bot_img_3
     @auto_site.homepage.bot_img_4
     @auto_site.homepage.bot_img_5
+  end
+
+  it 'should have toggle buttons' do
+    @auto_site.homepage.toggle_left
+    @auto_site.homepage.toggle_right
   end
 
 

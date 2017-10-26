@@ -10,10 +10,14 @@ class Homepage
   CONTACT_US_LINK_ID = '#contact-link'
   SEARCH_BAR = '#search_query_top'
   SEARCH_BAR_BUTTON = '//*[@id="searchbox"]/button'
+  CART = '//*[@id="header"]/div[3]/div/div/div[3]/div/a'
   TOP_SALES_IMG = '//*[@id="header"]/div[1]/div/div/a/img'
   HOMEPAGE_SLIDER = '#homepage-slider'
   SALE_BUTTON_2 = '//*[@id="htmlcontent_top"]/ul/li[1]/a/img'
   SALE_BUTTON_3 = '//*[@id="htmlcontent_top"]/ul/li[2]/a/img'
+  TOGGLE_LEFT = '//*[@id="home-page-tabs"]/li[1]/a'
+  TOGGLE_RIGHT = '//*[@id="home-page-tabs"]/li[2]/a'
+  PRODUCT_LIST = '//*[@id="homefeatured"]'
   BOT_IMG1 = '//*[@id="htmlcontent_home"]/ul/li[1]/a/img'
   BOT_IMG2 = '//*[@id="htmlcontent_home"]/ul/li[2]/a/img'
   BOT_IMG3 = '//*[@id="htmlcontent_home"]/ul/li[3]/a/img'
@@ -45,6 +49,10 @@ class Homepage
     contact_us_link.click
   end
 
+  def cart
+    find(:xpath, CART)
+  end
+
   def sign_in_link
     find(SIGN_IN_LINK_ID)
   end
@@ -61,12 +69,24 @@ class Homepage
     find(HOMEPAGE_SLIDER)
   end
 
+  def products
+    find(:xpath, PRODUCT_LIST)
+  end
+
   def percentage_button2
     find(:xpath, SALE_BUTTON_2)
   end
 
   def percentage_button3
     find(:xpath, SALE_BUTTON_3)
+  end
+
+  def toggle_left
+    find(:xpath, TOGGLE_LEFT)
+  end
+
+  def toggle_right
+    find(:xpath, TOGGLE_RIGHT)
   end
 
   def bot_img_1
