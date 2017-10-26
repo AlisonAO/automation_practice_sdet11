@@ -6,7 +6,7 @@ describe 'webpage' do
         @automation = AutomationPracticeSite.new
     end
 
-    it "should create account" do
+    it "should vist the sign in page and click create account button" do
         @automation.login.visit_sign_in_page
         sleep 5
         @automation.login.input_new_user_email('code@hotmail.com')
@@ -19,7 +19,9 @@ describe 'webpage' do
         @automation.createaccount.input_customer_firstname('Zara')
         @automation.createaccount.input_customer_lastname('Swanson')
         @automation.createaccount.input_email('code@hotmail.com')
-        @automation.createaccount.choose_day('option[2]')
+        @automation.createaccount.choose_day('3')
+        @automation.createaccount.choose_months('February')
+        @automation.createaccount.choose_year('1995')
         sleep 5
     end
 

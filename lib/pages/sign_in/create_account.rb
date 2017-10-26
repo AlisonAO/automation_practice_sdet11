@@ -70,24 +70,36 @@ class CreateAccount
     find(DAY_DROPDOWN_ID)
   end
 
+  def click_day_dropdown
+    day_dropdown.click
+  end
+
   def choose_day(days)
-    day_dropdown.find(days).select_option
+    click_day_dropdown.select(days)
   end
 
   def months_dropdown
     find(MONTH_DROPDOWN_ID)
   end
 
+  def click_months_dropdown
+    months_dropdown.click
+  end
+
   def choose_months(months)
-    months_dropdown.find(months).select_option
+    click_month_dropdown.select(months)
   end
 
   def year_dropdown
     find(YEAR_DROPDOWN_ID)
   end
 
+  def click_year_dropdown
+    year_dropdown.click
+  end
+
   def choose_year(years)
-    year_dropdown.find(years).select_option
+    click_year_dropdown.select(years)
   end
 
   def newsletter_checbox
