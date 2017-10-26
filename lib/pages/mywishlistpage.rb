@@ -8,16 +8,19 @@ class MyWishListPage
   WISHLIST_FORM_ID = '#form_wishlist'
   WISHLIST_NAME_FIELD_ID = '#name'
   WISHLIST_SUBMIT_BUTTON_ID = '#submitWishlist'
-  @wishlist_name = ''
+  # WISHLIST_DELETE_CLASS = '.wishlist_delete'
 
   # Helper methods
+  def visit_wishlist_page
+    visit(WISHLIST_PAGE_LINK)
+  end
+
   def wishlist_name_field
     find(WISHLIST_NAME_FIELD_ID)
   end
 
   def input_wishlist_name(listname)
     wishlist_name_field.send_keys(listname)
-    @wishlistname = listname
   end
 
   def submit_button
@@ -28,12 +31,16 @@ class MyWishListPage
     submit_button.click
   end
 
-  def my_wishlist
-    find(link: @wishlistname)
+  def my_wishlist(listname)
+    find('a', text: listname)
   end
 
-  def click_my_wishlist
-    my_wishlist.click
+  def click_my_wishlist(listname)
+    my_wishlist(listname).click
   end
+
+  # def delete_wishlist_icon
+  #   find(WISHLIST_DELETE_CLASS)
+  # end
 
 end
