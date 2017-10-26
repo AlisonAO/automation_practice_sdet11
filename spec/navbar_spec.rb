@@ -17,26 +17,15 @@ describe "navbar functionality tests" do
     @navtest.visit_summer_dresses
   end
 
-  # it "should be able to access navigation bar from homepage" do
-  #   @navtest.homepage.visit_women
-  #   @navtest.homepage.visit_dresses
-  #   @navtest.homepage.visit_tshirts
-  #   @navtest.homepage.visit_blouses
-  #   @navtest.homepage.visit_tops
-  #   @navtest.homepage.visit_casual_dresses
-  #   @navtest.homepage.visit_evening_dresses
-  #   @navtest.homepage.visit_summer_dresses
-  # end
-
-  # it "should be able to access navigation bar from sign-in page" do
-  #   @navtest.signinpage.visit_women
-  #   @navtest.signinpage.visit_dresses
-  #   @navtest.signinpage.visit_tshirts
-  #   @navtest.signinpage.visit_blouses
-  #   @navtest.signinpage.visit_tops
-  #   @navtest.signinpage.visit_casual_dresses
-  #   @navtest.signinpage.visit_evening_dresses
-  #   @navtest.signinpage.visit_summer_dresses
-  # end
+  it "should be able to access navigation bar from homepage" do
+    @navtest.navbar.visit_women
+    @navtest.navbar.visit_dresses
+    @navtest.navbar.visit_tshirts
+    @navtest.navbar.visit_blouses
+    @navtest.navbar.visit_tops
+    @navtest.navbar.visit_casual_dresses
+    @navtest.navbar.visit_evening_dresses
+    @navtest.navbar.visit_summer_dresses
+  end
 
 end
