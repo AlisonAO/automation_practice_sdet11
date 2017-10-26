@@ -17,37 +17,56 @@ describe 'homepage' do
   end
 
   it 'should have a sales promotion bar at the top of the screen' do
-    @auto_site.homepage.find(:xpath, '//*[@id="header"]/div[1]/div/div/a/img').visible?
+    @auto_site.homepage.top_promotion_link.visible?
   end
 
   it 'should have the site logo on the page' do
-    @auto_site.homepage.find(:xpath, '//*[@id="header_logo"]/a/img').visible?
+    @auto_site.homepage.site_logo.visible?
   end
 
-  # Top Search Bar Tests
-  it 'checks a search text field is present' do
-    @auto_site.homepage.find('#search_query_top').visible?
+  # SEARCH BAR TESTS
+  context 'The page should have a functioning search bar' do
+    it 'should have a search text field' do
+      @auto_site.homepage.search_bar.visible?
+    end
+
+    it 'should have a search submit button' do
+      @auto_site.homepage.search_button.visible?
+    end
+
+    it 'should contain the correct query' do
+      @auto_site.homepage.fill_in('search_query', :with => 'red')
+      expect(@auto_site.homepage.find_field('search_query').value).to eq('red')
+    end
+
+    it 'has a url containing the correct query, post-click' do
+      @auto_site.homepage.find(:xpath, '//*[@id="searchbox"]/button').click
+      sleep 2
+      # expect(@auto_site.has_current_path?).to have_content('red')
+      # sleep 3
+    end
   end
 
-  it 'checks the search submit button present' do
-    @auto_site.homepage.find(:xpath, '//*[@id="searchbox"]/button').visible?
+  it 'should have a 3-image slider' do
+    @auto_site.homepage.visit_home_page
+    @auto_site.homepage.slider.visible?
   end
 
-  it 'checks that the text entered matches what is expected' do
-    @auto_site.homepage.fill_in('search_query', :with => 'red')
-    expect(@auto_site.homepage.find_field('search_query').value).to eq('red')
+  it 'should have %off image links' do
+    # @auto_site.homepage.visit_home_page
+    @auto_site.homepage.percentage_button2
+    @auto_site.homepage.percentage_button3
   end
 
-  it 'checks the search button works and url contains correct query' do
-    @auto_site.homepage.find(:xpath, '//*[@id="searchbox"]/button').click
-    expect(@auto_site).to have_content('red')
-    # sleep 3
-#
-#     session.fill_in('q', :with => 'Capybara')
-# session.click_button('Search')
-# expect(session).to have_content('Capybara')
-
+  it 'should have 5 working trend images' do
+    # @auto_site.homepage.visit_home_page
+    @auto_site.homepage.bot_img_1
+    @auto_site.homepage.bot_img_2
+    @auto_site.homepage.bot_img_3
+    @auto_site.homepage.bot_img_4
+    @auto_site.homepage.bot_img_5
   end
+
 
 
 
