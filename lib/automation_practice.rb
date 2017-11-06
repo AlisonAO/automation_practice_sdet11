@@ -42,4 +42,7 @@ class AutomationPracticeSite
       AddressesPage.new
     end
 
+    def createaccount
+      CreateAccount.new
+    end
 end
