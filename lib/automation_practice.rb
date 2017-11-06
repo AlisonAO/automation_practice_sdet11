@@ -8,12 +8,13 @@ require_relative 'pages/mywishlistpage'
 require_relative 'pages/cart'
 require_relative 'pages/productpage'
 require_relative 'pages/addressespage'
-require_relative 'pages/checkout/checkout'
+require_relative 'addnewaddresspage'
 require_relative 'pages/cart'
 require_relative 'pages/contact_form'
+require_relative 'pages/checkout/checkout'
 
 class AutomationPracticeSite
-  
+
     def homepage
        Homepage.new
     end
@@ -50,7 +51,12 @@ class AutomationPracticeSite
       AddressesPage.new
     end
 
+    def addnewaddresspage
+      AddNewAddressPage.new
+    end
+
     def createaccount
       CreateAccount.new
     end
+
 end

@@ -60,11 +60,6 @@ class Login
         sign_in_submit_button.click
     end
 
-
-
-
-
-
     def forgot_password
         find(FORGOT_PASSWORD_LINK)
     end
