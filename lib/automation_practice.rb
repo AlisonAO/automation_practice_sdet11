@@ -1,5 +1,3 @@
-
-  
 require_relative 'pages/homepage'
 require_relative 'pages/sign_in/create_account'
 require_relative 'pages/sign_in/forgotten_password'
@@ -10,12 +8,18 @@ require_relative 'pages/cart'
 require_relative 'pages/productpage'
 require_relative 'pages/addressespage'
 require_relative 'pages/cart'
+require_relative 'pages/contact_form'
 require_relative 'pages/navbar'
+
 
 class AutomationPracticeSite
   
     def homepage
        Homepage.new
+    end
+
+    def contactpage
+      Contact.new
     end
 
     def forgotpassword
@@ -42,4 +46,7 @@ class AutomationPracticeSite
       AddressesPage.new
     end
 
+    def createaccount
+      CreateAccount.new
+    end
 end
