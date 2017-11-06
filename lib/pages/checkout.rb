@@ -12,7 +12,7 @@ class Checkout
   end
 
   def method_name
-    
+
   end
 
 end
