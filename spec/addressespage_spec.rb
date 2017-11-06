@@ -34,7 +34,7 @@ describe 'Automation Practice' do
     sleep 3
   end
 
-  it 'should click the link called back to your account' do
+  it 'should click the link called back to your addresses' do
     @automation_practice_site.addressespage.click_back_to_your_account_link
     sleep 3
   end
