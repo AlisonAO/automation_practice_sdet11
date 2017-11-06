@@ -17,3 +17,19 @@ Then("I will be redirected to the my wishlist page") do
   expect(@site.mywishlistpage.current_url).to eq 'http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist'
   sleep 2
 end
+
+When("I go to the my wishlist page") do
+  @site.myaccountpage.click_wishlist_button
+end
+
+And("I enter a wishlist name and click save") do
+  @listname = 'My Wishlist'
+  @site.mywishlistpage.visit_wishlist_page
+  @site.mywishlistpage.input_wishlist_name(@listname)
+  @site.mywishlistpage.click_submit_button
+end
+
+Then("it will create a new wishlist with that name") do
+  @site.mywishlistpage.click_my_wishlist(@listname)
+  sleep 2
+end
