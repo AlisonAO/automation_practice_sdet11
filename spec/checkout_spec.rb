@@ -53,7 +53,7 @@ describe 'checkout page test' do
     sleep 3
   end
 
-  it 'should click a payment method' do
+  it 'should confirm the order' do
     @checkout.checkout.confirm_order.click
     sleep 3
   end
