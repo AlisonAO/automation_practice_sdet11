@@ -1,5 +1,3 @@
-You can implement step definitions for undefined steps with these snippets:
-
 Given("that I am on the t-shirt item page") do
   pending # Write code here that turns the phrase above into concrete actions
 end
@@ -8,7 +6,7 @@ When("I click on the add to cart button") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("I click on the proceed to checkout button") do
+And("I click on the proceed to checkout button") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
