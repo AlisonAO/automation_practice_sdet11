@@ -1,4 +1,6 @@
-#  require relative's will go here for each page
+
+  
+require_relative 'pages/homepage'
 require_relative 'pages/sign_in/create_account'
 require_relative 'pages/sign_in/forgotten_password'
 require_relative 'pages/sign_in/login'
@@ -11,6 +13,10 @@ require_relative 'pages/cart'
 require_relative 'pages/navbar'
 
 class AutomationPracticeSite
+  
+    def homepage
+       Homepage.new
+    end
 
     def forgotpassword
         ForgotPassword.new
