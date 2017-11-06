@@ -1,7 +1,6 @@
 require 'capybara/cucumber'
 require 'rspec'
-require_relative '../lib/automation_practice'
-
+require_relative '../../lib/automation_practice'
 Capybara::register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)
 end
