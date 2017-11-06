@@ -2,6 +2,7 @@ require_relative 'pages/homepage'
 require_relative 'pages/sign_in/create_account'
 require_relative 'pages/sign_in/forgotten_password'
 require_relative 'pages/sign_in/login'
+require_relative 'pages/navbar'
 require_relative 'pages/myaccountpage'
 require_relative 'pages/mywishlistpage'
 require_relative 'pages/cart'
@@ -10,8 +11,7 @@ require_relative 'pages/addressespage'
 require_relative 'addnewaddresspage'
 require_relative 'pages/cart'
 require_relative 'pages/contact_form'
-require_relative 'pages/navbar'
-
+require_relative 'pages/checkout/checkout'
 
 class AutomationPracticeSite
 
@@ -29,6 +29,10 @@ class AutomationPracticeSite
 
     def login
         Login.new
+    end
+
+    def checkout
+      Checkout.new
     end
 
     def myaccountpage

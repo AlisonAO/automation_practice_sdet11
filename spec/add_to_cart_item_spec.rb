@@ -16,12 +16,12 @@ describe 'testing add to cart button on item page' do
     it 'should find and click on the add to cart button' do
       @cart.click_item_page
       @cart.continue_shopping_button
-      sleep 5
+      sleep 3
     end
 
     it 'should find and click on the proceed to checkout button' do
       @cart.click_proceed_to_checkout_button
-      sleep 5
+      sleep 3
     end
 
   end
