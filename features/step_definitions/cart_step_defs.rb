@@ -16,10 +16,10 @@ Then("I will go to the checkout page") do
   expect(@cart.current_url).to eq('http://automationpractice.com/index.php?controller=order')
 end
 
-# When("I click on the return to shopping button") do
-#   pending # Write code here that turns the phrase above into concrete actions
-# end
-#
-# Then("I will go back to the t-shirt item page") do
-#   pending # Write code here that turns the phrase above into concrete actions
-# end
+When("I click on the return to shopping button") do
+  @cart.click_continue_shopping_button
+end
+
+Then("I will go back to the t-shirt item page") do
+  expect(@cart.current_url).to eq('http://automationpractice.com/index.php?id_product=1&controller=product')
+end
