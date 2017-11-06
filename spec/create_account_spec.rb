@@ -18,7 +18,6 @@ describe 'webpage' do
         @automation.createaccount.choose_title_button('Mrs.')
         @automation.createaccount.input_customer_firstname('Zara')
         @automation.createaccount.input_customer_lastname('Swanson')
-        # @automation.createaccount.input_email('code@hotmail.com')
         @automation.createaccount.input_password('password')
         @automation.createaccount.choose_day('3')
         @automation.createaccount.choose_months('February')
@@ -32,7 +31,7 @@ describe 'webpage' do
         @automation.createaccount.input_address_line_two('Ruby High Rise')
         @automation.createaccount.input_city('London')
         @automation.createaccount.choose_state('Hawaii')
-        @automation.createaccount.input_postcode('CO3 5ES') #used incorrect postcode on purpose. If you want test to pass change it to 96704
+        @automation.createaccount.input_postcode('96704')
         @automation.createaccount.choose_country('United States')
         @automation.createaccount.input_additional('I regret choosing the create account page')
         @automation.createaccount.input_home_phone('02074713422')
@@ -41,7 +40,4 @@ describe 'webpage' do
         @automation.createaccount.click_register_button
         sleep 5
     end
-
-
-
 end
