@@ -15,3 +15,5 @@ Capybara.configure do |config|
   config.match = :prefer_exact #this setting is to ensure Capybara has specific matching rather than fuzzy logic
   config.default_driver = :chrome # ensures chrome is the default driver
 end
+
+driver = Capybara::Session.new(:chrome)
