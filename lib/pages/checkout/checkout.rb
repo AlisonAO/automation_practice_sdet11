@@ -13,6 +13,7 @@ class Checkout
   TOS_CHECKBOX = '#cgv'
   CHECKOUT_BUTTON_THREE = '//*[@id="form"]/p/button'
   PAYMENT_METHOD_BUTTON = '//*[@id="HOOK_PAYMENT"]/div[1]/div'
+  CONFIRM_ORDER_BUTTON = '//*[@id="cart_navigation"]/button'
 
   def visit_checkout
     visit(CHECKOUT_URL)
@@ -48,5 +49,9 @@ class Checkout
 
   def payment_method_1
     find(:xpath, PAYMENT_METHOD_BUTTON)
+  end
+
+  def confirm_order
+    find(:xpath, CONFIRM_ORDER_BUTTON)
   end
 end
