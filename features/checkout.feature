@@ -1,4 +1,4 @@
-@chekout
+@checkout
 Feature: Checkout Activities
 as a User
 i want to be able to checkout and purchase items from the website
