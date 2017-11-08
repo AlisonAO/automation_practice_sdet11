@@ -35,7 +35,7 @@ When("I input the correct details") do
 end
 
 
-Then("I would have created an account") do
+Then("I will have an account and be directed to the my account page") do
   @automation.createaccount.click_register_button
   @automation.myaccountpage.my_personal_information_link
 end
