@@ -5,7 +5,7 @@ class Checkout
   CHECKOUT_URL = 'http://automationpractice.com/index.php?controller=order'
   CHECKOUT_SIGN_IN_URL = 'http://automationpractice.com/index.php?controller=authentication&multi-shipping=0&display_guest_checkout=0&back=http%3A%2F%2Fautomationpractice.com%2Findex.php%3Fcontroller%3Dorder%26step%3D1%26multi-shipping%3D0'
   CHECKOUT_ADDRESS_URL = 'http://automationpractice.com/index.php?controller=order&step=1'
-  CHECKOUT_PAYMENT_URL = 'http://automationpractice.com/index.php?controller=order&multi-shipping='
+  CHECKOUT_PAYMENT_URL = 'http://automationpractice.com/index.php?fc=module&module=cheque&controller=payment'
   CHECKOUT_PROCEED_BUTTON = '//*[@id="center_column"]/p[2]/a[1]'
   CHECKOUT_BUTTON_TWO = '//*[@id="center_column"]/form/p/button'
   DELETE_ITEM_BUTTON = '#3_13_0_0'
@@ -15,6 +15,8 @@ class Checkout
   PAYMENT_METHOD_BUTTON = '//*[@id="HOOK_PAYMENT"]/div[1]/div'
   CONFIRM_ORDER_BUTTON = '//*[@id="cart_navigation"]/button'
   ITEM_IMAGE_LINK = '//*[@id="product_1_1_0_32349"]/td[1]/a/img'
+  CONFIRMATION_MESSAGE = '//*[@id="center_column"]/div'
+  PAYMENT_PAGE_URL = 'http://automationpractice.com/index.php?controller=order-confirmation&id_cart=305763&id_module=3&id_order=24022&key=c6c8e91e2a7bd4ddd561873285ec2fe1'
 
   def visit_checkout
     visit(CHECKOUT_URL)
@@ -61,6 +63,22 @@ class Checkout
   end
 
   def address_url
-    (CHECKOUT_ADDRESS_URL)
+    CHECKOUT_ADDRESS_URL
+  end
+
+  def find_checkout_url
+    CHECKOUT_URL
+  end
+
+  def payment_method
+    CHECKOUT_PAYMENT_URL
+  end
+
+  def confirmation_message
+    find(:xpath, CONFIRMATION_MESSAGE)
+  end
+
+  def payment_url
+    PAYMENT_PAGE_URL
   end
 end

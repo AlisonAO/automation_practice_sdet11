@@ -14,4 +14,6 @@ i want to be able to checkout and purchase items from the website
     Then I will go to the shipping page
 
     When I check the terms of service checkbox
+    And I am on the payment confirmation page
     Then I will be able to confirm my order
+    And I should be able to see a confirmation message
