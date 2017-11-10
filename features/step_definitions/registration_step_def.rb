@@ -5,7 +5,7 @@ Given("I am on the register page") do
 end
 
 And("I enter my email address and click the link to register") do
-  @automation.login.input_new_user_email('painandsorrowandsadness@hotmail.com')
+  @automation.login.input_new_user_email('isthistheend@hotmail.com')
   @automation.login.click_create_submit_button
 end
 
@@ -41,14 +41,14 @@ Then("I will have an account and be directed to the my account page") do
 end
 
 
-Given("I am on the register page") do
+Given("I am on the register an account page") do
   @automation = AutomationPracticeSite.new
   @automation.homepage.visit_home_page
   @automation.homepage.click_sign_in_link
 end
 
-And("I enter my email address and click the link to register") do
-  @automation.login.input_new_user_email('painandsorrowandsadness@hotmail.com')
+And("I enter a correct email address and click the link to register") do
+  @automation.login.input_new_user_email('howmanymoretimes@hotmail.com')
   @automation.login.click_create_submit_button
 end
 
@@ -78,5 +78,6 @@ When("I input the correct details and an invalid postcode") do
 end
 
 Then("An error message will appear on the page") do
+  @automation.createaccount.click_register_button
   expect(@automation.createaccount.postcode_error).to eq 'The Zip/Postal code you\'ve entered is invalid. It must follow this format: 00000'
 end
