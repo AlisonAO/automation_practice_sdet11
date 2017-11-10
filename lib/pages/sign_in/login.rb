@@ -10,7 +10,8 @@ class Login
     CREATE_BUTTON_ID = '#SubmitCreate'
     SING_IN_BUTTON_ID = '#SubmitLogin'
     FORGOT_PASSWORD_LINK = 'http://automationpractice.com/index.php?controller=password'
-
+    ERROR_PAGE_URL = 'http://automationpractice.com/index.php?controller=authentication'
+    ERROR_MESSAGE_XPATH = '//*[@id="center_column"]/div[1]/ol/li'
 
     def visit_sign_in_page
         visit(SIGN_IN_PAGE_LINK)
@@ -31,10 +32,6 @@ class Login
     def click_create_submit_button
         create_submit_button.click
     end
-
-
-
-
 
     def sign_in_user_field
         find(USEREMAIL_FIELD_ID)
@@ -68,5 +65,8 @@ class Login
         click_link('Forgot your password?')
     end
 
+    def get_error_message
+      find(:xpath, ERROR_MESSAGE_XPATH).text
+    end
 
 end
