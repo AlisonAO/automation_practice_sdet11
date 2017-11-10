@@ -9,5 +9,4 @@ When("I click the contact us link") do
 end
 
 Then("I go to the contact us page") do
-
 end
