@@ -13,7 +13,6 @@ Given("I am signed in on the checkout page and have an item in the cart") do
 
   @cart.load_item_page
   @cart.click_item_page
-  # @cart.click_proceed_to_checkout_button
   sleep 3
 
 
