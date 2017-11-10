@@ -47,7 +47,7 @@ And("I click proceed") do
 end
 
 Then("I will go to the shipping page") do
-  # pending # Write code here that turns the phrase above into concrete actions
+expect(@checkout.checkout.find_checkout_url).to eql ("http://automationpractice.com/index.php?controller=order")
 end
 
 When("I check the terms of service checkbox") do
@@ -57,9 +57,18 @@ When("I check the terms of service checkbox") do
   sleep 3
 end
 
+And("I am on the payment confirmation page") do
+  expect(@checkout.checkout.payment_method).to eql ("http://automationpractice.com/index.php?fc=module&module=cheque&controller=payment")
+end
+
 Then("I will be able to confirm my order") do
   @checkout.checkout.payment_method_1.click
   sleep 3
   @checkout.checkout.confirm_order.click
   sleep 3
+end
+
+And("I should be able to see a confirmation message")do
+  expect(@checkout.checkout.payment_url).to eql ("http://automationpractice.com/index.php?controller=order-confirmation&id_cart=305763&id_module=3&id_order=24022&key=c6c8e91e2a7bd4ddd561873285ec2fe1")
+  expect(@checkout.checkout.confirmation_message.visible?).to eql true
 end
