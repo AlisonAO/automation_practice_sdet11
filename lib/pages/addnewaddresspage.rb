@@ -77,8 +77,19 @@ class AddNewAddressPage
       find(STATE_SELECTOR_ID)
     end
 
-    def select_state(state)
-      find_state_selector.select_by(state)
+    def select_state#(state)
+      #find_state_selector.select_by(state)
+      dropdown_list = find_state_selector
+      options = dropdown_list.find_elements(tag_name: 'option')
+      options.each { |option| options.click if option.text == 'Nevada' }
+
+
+      dropdown_list = @driver.find_element(:id, 'continents')
+      options = dropdown_list.find_elements(tag_name: 'option')
+      options.each { |option| option.click if option.text == 'South America' }
+
+      selected_option = options.map { |option| option.text if option.selected? }.join
+      expect(selected_option).to eq 'South America'
     end
 
     def find_postcode_field
