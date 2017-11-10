@@ -54,7 +54,7 @@ class AddNewAddressPage
     end
 
     def input_address_field(address)
-      find_address_field.send_keys(address_field)
+      find_address_field.send_keys(address)
     end
 
     def find_address_line_2_field
@@ -62,7 +62,7 @@ class AddNewAddressPage
     end
 
     def input_address_line_2_field(address_line_2)
-      find_address_line_2_field.send_keys(address_line_2_field)
+      find_address_line_2_field.send_keys(address_line_2)
     end
 
     def find_city_field
@@ -77,8 +77,13 @@ class AddNewAddressPage
       find(STATE_SELECTOR_ID)
     end
 
-    def select_state(state)
-      find_state_selector.select_by(state)
+    def select_state#(state)
+      #find_state_selector.select_by(state)
+      dropdown_list = find_state_selector
+      options = dropdown_list.find_link(text: 'option')
+      options.each { |option| option.click if option.text == 'Nevada' }
+
+      selected_option = options.map { |option| option.text if option.selected? }.join
     end
 
     def find_postcode_field
