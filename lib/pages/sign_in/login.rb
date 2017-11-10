@@ -65,7 +65,7 @@ class Login
     end
 
     def forgot_passwork_click
-        forgot_password.click
+        click_link('Forgot your password?')
     end
 
 
