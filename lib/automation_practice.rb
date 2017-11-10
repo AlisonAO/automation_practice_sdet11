@@ -59,4 +59,8 @@ class AutomationPracticeSite
       CreateAccount.new
     end
 
+    def cart
+      Cart.new
+    end
+
 end

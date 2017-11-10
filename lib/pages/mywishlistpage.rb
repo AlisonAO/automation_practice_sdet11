@@ -9,6 +9,7 @@ class MyWishListPage
   WISHLIST_NAME_FIELD_ID = '#name'
   WISHLIST_SUBMIT_BUTTON_ID = '#submitWishlist'
   WISHLIST_DELETE_CLASS = '.wishlist_delete'
+  PRODUCT_ITEM_ID = '#s_title'
 
   # Helper methods
   def visit_wishlist_page
@@ -47,6 +48,10 @@ class MyWishListPage
   def delete_wishlist
     find_delete_wishlist_icon.click
     page.driver.browser.switch_to.alert.accept
+  end
+
+  def find_wishlist_item
+    find(PRODUCT_ITEM_ID)
   end
 
 end
