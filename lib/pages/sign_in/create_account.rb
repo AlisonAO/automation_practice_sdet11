@@ -29,6 +29,7 @@ class CreateAccount
   MOBILE_PHONE_FIELD_ID = '#phone_mobile'
   ADDRESS_ALIAS_FIELD_ID = '#alias'
   REGISTER_ACCOUNT_BUTTON_ID = '#submitAccount'
+  POSTCODE_ERROR_MESSAGE = '//*[@id="center_column"]/div/ol/li'
 
   def choose_title_button(title)
     choose(title)
@@ -236,6 +237,10 @@ class CreateAccount
 
   def click_register_button
     register_button.click
+  end
+
+  def postcode_error
+    find(:xpath, POSTCODE_ERROR_MESSAGE).text
   end
 
 end
