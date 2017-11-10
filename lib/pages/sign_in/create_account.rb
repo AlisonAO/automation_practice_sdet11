@@ -30,6 +30,7 @@ class CreateAccount
   ADDRESS_ALIAS_FIELD_ID = '#alias'
   REGISTER_ACCOUNT_BUTTON_ID = '#submitAccount'
   POSTCODE_ERROR_MESSAGE = '//*[@id="center_column"]/div/ol/li'
+  SHORT_PASSWORD_ERROR_MESSAGE = '//*[@id="center_column"]/div/ol/li[1]/b'
 
   def choose_title_button(title)
     choose(title)
@@ -243,4 +244,7 @@ class CreateAccount
     find(:xpath, POSTCODE_ERROR_MESSAGE).text
   end
 
+  def short_password_error
+    find(:xpath, SHORT_PASSWORD_ERROR_MESSAGE).text
+  end
 end
