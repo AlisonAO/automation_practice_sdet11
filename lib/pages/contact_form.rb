@@ -50,6 +50,10 @@ class Contact
     email_form.send_keys('sparta@123.com')
   end
 
+  def write_invalid_email
+    email_form.send_keys('djasn')
+  end
+
   def click_email_form
     email_form.click
   end
@@ -81,6 +85,11 @@ class Contact
   def message_write
     select_message.send_keys('hello!')
   end
+
+  def invalid_message_write
+    select_message.send_keys('h')
+  end
+
 
   def submit_button
     find(SUBMIT_MESSAGE)
