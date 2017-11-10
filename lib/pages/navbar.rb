@@ -14,49 +14,44 @@ class NavBar
     EVENING_DRESSES_PAGE_URL = 'http://automationpractice.com/index.php?id_category=10&controller=category'
     SUMMER_DRESSES_PAGE_URL = 'http://automationpractice.com/index.php?id_category=11&controller=category'
 
+    def category
+      find(".category-name").text
+    end
+
     def start
       visit(HOMEPAGE_URL)
-      sleep 2
     end
 
     def visit_women
       visit(WOMEN_PAGE_URL)
-      sleep 2
     end
 
     def visit_dresses
       visit(DRESSES_PAGE_URL)
-      sleep 2
     end
 
     def visit_tshirts
       visit(TSHIRTS_PAGE_URL)
-      sleep 2
     end
 
     def visit_blouses
       visit(BLOUSES_PAGE_URL)
-      sleep 2
     end
 
     def visit_tops
       visit(TOPS_PAGE_URL)
-      sleep 2
     end
 
     def visit_casual_dresses
       visit(CASUAL_DRESSES_PAGE_URL)
-      sleep 2
     end
 
     def visit_evening_dresses
       visit(EVENING_DRESSES_PAGE_URL)
-      sleep 2
     end
 
     def visit_summer_dresses
       visit(SUMMER_DRESSES_PAGE_URL)
-      sleep 2
     end
 
 end
