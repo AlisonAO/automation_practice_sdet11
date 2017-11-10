@@ -58,9 +58,8 @@ class AutomationPracticeSite
     def createaccount
       CreateAccount.new
     end
-
+    
     def cart
       Cart.new
     end
-
 end

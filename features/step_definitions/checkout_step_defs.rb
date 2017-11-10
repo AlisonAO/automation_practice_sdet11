@@ -21,13 +21,19 @@ Given("I am signed in on the checkout page and have an item in the cart") do
   sleep 3
 end
 
+
+Then("I should see the item image in the product space") do
+  expect(@checkout.checkout.item_image.visible?).to eql true
+  sleep 2
+end
+
 When("I click the proceed button") do
   @checkout.checkout.checkout_button.click
   sleep 3
 end
 
 Then("I go to the address confirmation page") do
-  # pending # Write code here that turns the phrase above into concrete actions
+  expect(@checkout.checkout.address_url).to eql ("http://automationpractice.com/index.php?controller=order&step=1")
 end
 
 And("I enter a comment") do
