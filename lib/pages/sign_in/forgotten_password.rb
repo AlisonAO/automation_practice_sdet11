@@ -1,7 +1,7 @@
 require 'capybara/dsl'
 
 class ForgotPassword
-  
+
   include Capybara::DSL
 
     attr_accessor :forgot_confirmation_text
@@ -14,6 +14,7 @@ class ForgotPassword
     FORGOT_PASSWORD_PAGE_LINK = 'http://automationpractice.com/index.php?controller=password'
     USERNAME_FIELD_ID = "#email"
     RETRIEVE_PASSWORD_BUTTON_XPATH = '//*[@id="form_forgotpassword"]/fieldset/p/button'
+    ERROR_MESSAGE = '//*[@id="center_column"]/div/div/ol/li'
 
 
     def visit_forgotten_password_page
@@ -38,6 +39,10 @@ class ForgotPassword
 
     def get_confirmation_message_text
       find(:xpath, FORGOT_CONFIRMATION).text
+    end
+
+    def wrong_email_error
+      find(:xpath, ERROR_MESSAGE).text
     end
 
 end
