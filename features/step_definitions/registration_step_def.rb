@@ -5,22 +5,22 @@ Given("I am on the register page") do
 end
 
 And("I enter my email address and click the link to register") do
-  @automation.login.input_new_user_email('painandsorrow@hotmail.com')
+  @automation.login.input_new_user_email('painandsorrowandsadness@hotmail.com')
   @automation.login.click_create_submit_button
 end
 
 When("I input the correct details") do
   @automation.createaccount.choose_title_button('Mrs.')
-  @automation.createaccount.input_customer_firstname('Teresa')
+  @automation.createaccount.input_customer_firstname('Rain')
   @automation.createaccount.input_customer_lastname('Blue')
   @automation.createaccount.input_password('password')
-  @automation.createaccount.choose_day('28')
-  @automation.createaccount.choose_months('March')
+  @automation.createaccount.choose_day('30')
+  @automation.createaccount.choose_months('April')
   @automation.createaccount.choose_year('1989')
   @automation.createaccount.check_newsletter
   @automation.createaccount.check_special_offers
-  @automation.createaccount.input_address_firstname('Lisa')
-  @automation.createaccount.input_address_lastname('James')
+  @automation.createaccount.input_address_firstname('Rain')
+  @automation.createaccount.input_address_lastname('Blue')
   @automation.createaccount.input_company_field('Sparta')
   @automation.createaccount.input_address_line_one('200 Code Street')
   @automation.createaccount.input_address_line_two('Ruby High Rise')
