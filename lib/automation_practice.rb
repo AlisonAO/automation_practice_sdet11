@@ -58,5 +58,4 @@ class AutomationPracticeSite
     def createaccount
       CreateAccount.new
     end
-
 end
