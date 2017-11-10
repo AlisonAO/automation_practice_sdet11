@@ -5,7 +5,7 @@ Given("I am on the register page") do
 end
 
 And("I enter my email address and click the link to register") do
-  @automation.login.input_new_user_email('deckofcards@hotmail.com')
+  @automation.login.input_new_user_email('finaltestemail@hotmail.com')
   @automation.login.click_create_submit_button
 end
 
