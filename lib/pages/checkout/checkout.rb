@@ -14,6 +14,7 @@ class Checkout
   CHECKOUT_BUTTON_THREE = '//*[@id="form"]/p/button'
   PAYMENT_METHOD_BUTTON = '//*[@id="HOOK_PAYMENT"]/div[1]/div'
   CONFIRM_ORDER_BUTTON = '//*[@id="cart_navigation"]/button'
+  ITEM_IMAGE_LINK = '//*[@id="product_1_1_0_32349"]/td[1]/a/img'
 
   def visit_checkout
     visit(CHECKOUT_URL)
@@ -53,5 +54,13 @@ class Checkout
 
   def confirm_order
     find(:xpath, CONFIRM_ORDER_BUTTON)
+  end
+
+  def item_image
+    find(:xpath, ITEM_IMAGE_LINK)
+  end
+
+  def address_url
+    (CHECKOUT_ADDRESS_URL)
   end
 end

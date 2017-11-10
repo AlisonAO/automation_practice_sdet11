@@ -5,6 +5,7 @@ i want to be able to checkout and purchase items from the website
 
   Scenario: When we have landed on the checkout page, signed in and have an item in the basket then I will be able to proceed through checkout
     Given I am signed in on the checkout page and have an item in the cart
+    Then I should see the item image in the product space
     When I click the proceed button
     Then I go to the address confirmation page
 
