@@ -1,6 +1,22 @@
 
-Given("I am on the checkout summary page") do
+Given("I am signed in on the checkout page and have an item in the cart") do
   @checkout = AutomationPracticeSite.new
+  @checkout.homepage.visit_home_page
+  @checkout.homepage.click_sign_in_link
+  sleep 3
+  @checkout.login.input_user_email('test@spartaglobal.co')
+  @checkout.login.input_user_password('password')
+  @checkout.login.click_sign_in_submit_button
+  sleep 3
+
+  @cart = AutomationPracticeSite.new.cart
+
+  @cart.load_item_page
+  @cart.click_item_page
+  # @cart.click_proceed_to_checkout_button
+  sleep 3
+
+
   @checkout.checkout.visit_checkout
   sleep 3
 end
@@ -11,30 +27,27 @@ When("I click the proceed button") do
 end
 
 Then("I go to the address confirmation page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given("I enter a message") do
-  @checkout = AutomationPracticeSite.new
+And("I enter a comment") do
   @checkout.checkout.input_checkout_field('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
   sleep 3
 end
 
-When("I click proceed") do
+And("I click proceed") do
   @checkout.checkout.checkout_button_two.click
   sleep 3
 end
 
 Then("I will go to the shipping page") do
-  @checkout.checkout.checkout_button_three.click
-end
-
-Given("I proceed through the pages") do
-  @checkout = AutomationPracticeSite.new
+  # pending # Write code here that turns the phrase above into concrete actions
 end
 
 When("I check the terms of service checkbox") do
   @checkout.checkout.tos_checkbox.click
+  @checkout.checkout.checkout_button_three.click
+
   sleep 3
 end
 
