@@ -77,13 +77,8 @@ class AddNewAddressPage
       find(STATE_SELECTOR_ID)
     end
 
-    def select_state#(state)
-      #find_state_selector.select_by(state)
-      dropdown_list = find_state_selector
-      options = dropdown_list.find_link(text: 'option')
-      options.each { |option| option.click if option.text == 'Nevada' }
-
-      selected_option = options.map { |option| option.text if option.selected? }.join
+    def select_state(state)
+      find_state_selector.click.select(state)
     end
 
     def find_postcode_field

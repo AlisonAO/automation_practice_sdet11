@@ -12,15 +12,13 @@ When("I fill out the form correctly") do
   @auto_site.addnewaddresspage.input_address_field("12 Ellesmere Road")
   @auto_site.addnewaddresspage.input_address_line_2_field("Willesden Green")
   @auto_site.addnewaddresspage.input_city_field("London")
-  expect(@auto_site.addnewaddresspage.select_state).to eq 'Nevada'
-
-
+  @auto_site.addnewaddresspage.select_state("Nevada")
 end
 
 And("I click the save button") do
-  pending # Write code here that turns the phrase above into concrete actions
+
 end
 
 Then("the address is saved and I am redirected to the my addresses page") do
-  pending # Write code here that turns the phrase above into concrete actions
+
 end
