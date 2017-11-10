@@ -61,6 +61,7 @@ end
 
 When("I click the add to wishlist button") do
   @site.productpage.click_add_to_wishlist_button
+  sleep 1
 end
 
 Then("I will get an added to wishlist message") do
@@ -87,4 +88,13 @@ end
 
 Then("I will see the product in my wishlist") do
   @site.mywishlistpage.find_wishlist_item
+end
+
+Given("I am not logged in and on a product page") do
+  @site = AutomationPracticeSite.new
+  @site.productpage.visit_product_page
+end
+
+Then("I will get an error message") do
+  expect(@site.productpage.get_alert_message).to eq "You must be logged in to manage your wishlist."
 end
